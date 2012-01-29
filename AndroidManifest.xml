@@ -28,6 +28,7 @@
                 <category android:name="com.burnandtremble.escalator"></category>
             </intent-filter>
         </receiver>
+        <activity android:name=".Preferences"></activity>
 
     </application>
 </manifest>

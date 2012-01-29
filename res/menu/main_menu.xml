@@ -3,5 +3,6 @@
         <group android:id="@+id/group1">
             <item android:title="@string/register_c2dm" android:id="@+id/register_c2dm_item"></item>
             <item android:title="@string/unregister_c2dm" android:id="@+id/unregister_c2dm_item"></item>
+            <item android:id="@+id/preferences_item" android:title="@string/preferences"></item>
         </group>
     </menu>

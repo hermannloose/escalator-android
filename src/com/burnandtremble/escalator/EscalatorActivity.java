@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class EscalatorActivity extends Activity {
@@ -16,8 +18,10 @@ public class EscalatorActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.main);
+
         SharedPreferences settings = getSharedPreferences("escalatorPush", 0);
-        if (settings.getBoolean("registered", false)) {
+        if (!settings.getBoolean("registered", false)) {
           Intent registrationIntent = new Intent("com.google.android.c2dm.intent.REGISTER");
           registrationIntent.putExtra("app",
               PendingIntent.getBroadcast(this, 0, new Intent(), 0));
@@ -26,7 +30,10 @@ public class EscalatorActivity extends Activity {
           startService(registrationIntent);
         }
 
-        setContentView(R.layout.main);
+        CheckBox registered = (CheckBox) findViewById(R.id.registeredView);
+        registered.setChecked(settings.getBoolean("registered", false));
+        TextView registrationId = (TextView) findViewById(R.id.registrationIdView);
+        registrationId.setText(settings.getString("registration_id", "none"));
     }
 
     @Override
@@ -56,6 +63,11 @@ public class EscalatorActivity extends Activity {
           startService(unregIntent);
 
           Toast.makeText(this, "C2DM unregistration request sent.", 2).show();
+
+          return true;
+        case R.id.preferences_item:
+          Intent settingsIntent = new Intent(getBaseContext(), Preferences.class);
+          startActivity(settingsIntent);
 
           return true;
         default:

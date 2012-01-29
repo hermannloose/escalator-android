@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, EscalatorActivity!</string>
+    <string name="hello">Very rough prototype, displaying some debugging output:</string>
     <string name="app_name">Escalator</string>
     <string name="register_c2dm">C2DM Register</string>
     <string name="unregister_c2dm">C2DM Unregister</string>
+    <string name="preferences">Preferences</string><string name="serverSettings">Server Settings</string>
+    <string name="serverSettingsSummary">Settings for the Escalator backend.</string><string name="serverHostPref">serverHostPref</string>
+    <string name="serverHost">Host</string>
+    <string name="serverHostSummary">Set the host for the Escalator backend.</string><string name="serverPortPref">serverPortPref</string>
+    <string name="serverPort">Port</string>
+    <string name="serverPortSummary">Set the port for the Escalator backend.</string>
 </resources>

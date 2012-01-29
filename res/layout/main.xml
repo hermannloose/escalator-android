@@ -9,4 +9,7 @@
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     />
+<CheckBox android:layout_height="wrap_content" android:clickable="false" android:layout_width="fill_parent" android:id="@+id/registeredView" android:text="Registered?"></CheckBox>
+<TextView android:layout_height="wrap_content" android:id="@+id/textView1" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="fill_parent" android:text="Registration ID:"></TextView>
+<TextView android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="fill_parent" android:id="@+id/registrationIdView"></TextView>
 </LinearLayout>

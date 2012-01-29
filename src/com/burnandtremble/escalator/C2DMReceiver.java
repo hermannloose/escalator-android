@@ -46,8 +46,7 @@ public class C2DMReceiver extends BroadcastReceiver {
 
       editor.commit();
 
-      Toast.makeText(context, "C2DM registration successful, registration ID: "
-          + registration + ".", 2).show();
+      Toast.makeText(context, "C2DM registration successful.", 2).show();
     }
   }
 }

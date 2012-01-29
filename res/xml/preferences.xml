@@ -1,0 +1,8 @@
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/serverSettings" android:summary="@string/serverSettingsSummary">
+        <EditTextPreference android:key="@string/serverHostPref" android:title="@string/serverHost" android:summary="@string/serverHostSummary"></EditTextPreference>
+        <EditTextPreference android:title="@string/serverPort" android:key="@string/serverPortPref" android:summary="@string/serverPortSummary"></EditTextPreference>
+    </PreferenceCategory>
+	
+</PreferenceScreen>
