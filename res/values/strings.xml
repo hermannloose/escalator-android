@@ -2,4 +2,6 @@
 <resources>
     <string name="hello">Hello World, EscalatorActivity!</string>
     <string name="app_name">Escalator</string>
+    <string name="register_c2dm">C2DM Register</string>
+    <string name="unregister_c2dm">C2DM Unregister</string>
 </resources>

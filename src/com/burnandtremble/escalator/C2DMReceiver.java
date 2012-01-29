@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 /**
  * @author Hermann Loose (hermannloose@gmail.com)
@@ -34,6 +35,8 @@ public class C2DMReceiver extends BroadcastReceiver {
       editor.remove("registration_id");
 
       editor.commit();
+
+      Toast.makeText(context, "C2DM unregistration successful.", 2).show();
     } else if (registration != null) {
       SharedPreferences settings = context.getSharedPreferences("escalatorPush", 0);
       SharedPreferences.Editor editor = settings.edit();
@@ -42,6 +45,9 @@ public class C2DMReceiver extends BroadcastReceiver {
       editor.putString("registration_id", registration);
 
       editor.commit();
+
+      Toast.makeText(context, "C2DM registration successful, registration ID: "
+          + registration + ".", 2).show();
     }
   }
 }
