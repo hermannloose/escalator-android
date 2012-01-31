@@ -10,10 +10,8 @@
     <string name="serverHostSummary">Set the host for the Escalator backend.</string><string name="serverPortPref">serverPortPref</string>
     <string name="serverPort">Port</string>
     <string name="serverPortSummary">Set the port for the Escalator backend.</string>
-    <string name="serverUserPref">serverUserPref</string>
-    <string name="serverUser">User</string>
-    <string name="serverUserSummary">Set the user for the Escalator backend.</string>
-    <string name="serverPasswordPref">serverPasswordPref</string>
-    <string name="serverPassword">Password</string>
-    <string name="serverPasswordSummary">Password for the Escalator backend.</string>
+    <string name="serverTokenPref">serverTokenPref</string>
+    <string name="serverToken">Auth Token</string>
+    <string name="serverTokenSummary">The authentication token for the Escalator backend.</string>
+    <string name="requestIssues">Make request</string>
 </resources>

@@ -3,7 +3,6 @@
     <PreferenceCategory android:title="@string/serverSettings" android:summary="@string/serverSettingsSummary">
         <EditTextPreference android:key="@string/serverHostPref" android:title="@string/serverHost" android:summary="@string/serverHostSummary"></EditTextPreference>
         <EditTextPreference android:title="@string/serverPort" android:key="@string/serverPortPref" android:summary="@string/serverPortSummary"></EditTextPreference>
-        <EditTextPreference android:title="@string/serverUser" android:summary="@string/serverUserSummary" android:key="@string/serverUserPref"></EditTextPreference>
-        <EditTextPreference android:title="@string/serverPassword" android:summary="@string/serverPasswordSummary" android:key="@string/serverPasswordPref"></EditTextPreference>
+        <EditTextPreference android:summary="@string/serverTokenSummary" android:key="@string/serverTokenPref" android:title="@string/serverToken"></EditTextPreference>
     </PreferenceCategory>
 </PreferenceScreen>
