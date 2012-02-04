@@ -13,5 +13,5 @@
     <string name="serverTokenPref">serverTokenPref</string>
     <string name="serverToken">Auth Token</string>
     <string name="serverTokenSummary">The authentication token for the Escalator backend.</string>
-    <string name="requestIssues">Make request</string>
+    <string name="sendRegistrationID">Send registration ID</string>
 </resources>

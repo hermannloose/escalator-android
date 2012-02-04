@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ public class EscalatorActivity extends Activity {
 
         setContentView(R.layout.main);
 
-        SharedPreferences settings = getSharedPreferences("escalatorPush", 0);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         if (!settings.getBoolean("registered", false)) {
           Intent registrationIntent = new Intent("com.google.android.c2dm.intent.REGISTER");
           registrationIntent.putExtra("app",
@@ -63,6 +64,22 @@ public class EscalatorActivity extends Activity {
           startService(unregIntent);
 
           Toast.makeText(this, "C2DM unregistration request sent.", 2).show();
+
+          return true;
+        case R.id.send_registration_id_item:
+          SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+          String host = settings.getString(getString(R.string.serverHostPref), "none");
+          String port = settings.getString(getString(R.string.serverPortPref), "none");
+          String token = settings.getString(getString(R.string.serverTokenPref), "none");
+          String registrationId = settings.getString("registration_id", "somethingwentwrong");
+          TextView responseView = (TextView) findViewById(R.id.responseView);
+
+          new BackendRegistrationTask(
+              host,
+              port,
+              token,
+              registrationId,
+              responseView).execute((Void) null);
 
           return true;
         case R.id.preferences_item:

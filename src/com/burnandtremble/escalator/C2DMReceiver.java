@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 /**
@@ -21,6 +23,9 @@ public class C2DMReceiver extends BroadcastReceiver {
 
   private void handleMessage(Context context, Intent intent) {
     // TODO(hermannloose): Implement C2DMReceiver#handleMessage.
+    Bundle data = intent.getExtras();
+    String message = data.getString("message");
+    Toast.makeText(context, message, 3).show();
   }
 
   private void handleRegistration(Context context, Intent intent) {
@@ -28,7 +33,7 @@ public class C2DMReceiver extends BroadcastReceiver {
     if (intent.getStringExtra("error") != null) {
 
     } else if (intent.getStringExtra("unregistered") != null) {
-      SharedPreferences settings = context.getSharedPreferences("escalatorPush", 0);
+      SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
       SharedPreferences.Editor editor = settings.edit();
 
       editor.putBoolean("registered", false);
@@ -38,7 +43,7 @@ public class C2DMReceiver extends BroadcastReceiver {
 
       Toast.makeText(context, "C2DM unregistration successful.", 2).show();
     } else if (registration != null) {
-      SharedPreferences settings = context.getSharedPreferences("escalatorPush", 0);
+      SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
       SharedPreferences.Editor editor = settings.edit();
 
       editor.putBoolean("registered", true);

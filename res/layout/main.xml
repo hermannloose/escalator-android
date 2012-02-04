@@ -12,4 +12,10 @@
 <CheckBox android:layout_height="wrap_content" android:clickable="false" android:layout_width="fill_parent" android:id="@+id/registeredView" android:text="Registered?"></CheckBox>
 <TextView android:layout_height="wrap_content" android:id="@+id/textView1" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="fill_parent" android:text="Registration ID:"></TextView>
 <TextView android:layout_height="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="fill_parent" android:id="@+id/registrationIdView"></TextView>
+<TextView android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/textView2" android:layout_width="fill_parent" android:text="Response:"></TextView>
+<ScrollView android:layout_width="match_parent" android:id="@+id/scrollView1" android:layout_height="fill_parent">
+    <LinearLayout android:id="@+id/linearLayout1" android:orientation="vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
+        <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:text="TextView" android:id="@+id/responseView" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+    </LinearLayout>
+</ScrollView>
 </LinearLayout>
