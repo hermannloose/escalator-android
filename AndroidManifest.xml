@@ -29,6 +29,7 @@
             </intent-filter>
         </receiver>
         <activity android:name=".Preferences"></activity>
+        <activity android:name=".IssueActivity"></activity>
 
     </application>
 </manifest>
